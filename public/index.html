@@ -1,0 +1,61 @@
+﻿<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app>
+<head>
+
+
+    <title>my contact app</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+    <script src="core.js"></script>
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS WITH INITIALIZE FUNCTION -->
+<body ng-controller="main">
+    <div class="container">
+        <h1>Contact app </h1>
+        <br />
+        <br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Number</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tr>
+
+                <td>
+                    <input type="text" class="form-control" ng-model="contact.name" />
+                </td>
+
+                <td>
+                    <input type="text" class="form-control" ng-model="contact.number" />
+                </td>
+                <td>
+                    <input type="text" class="form-control" ng-model="contact.email" />
+                </td>
+                <td>
+                    <button class="btn btn-success" ng-click="addContact()" type="submit">add contact</button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" type="submit" ng-click="update(contact._id)">Update</button>
+                </td>
+            </tr>
+            <tr ng-repeat="contact in contacts">
+                <td>{{contact.name}}</td>
+                <td>{{contact.number}}</td>
+                <td>{{contact.email}}</td>
+                <td><button class="btn btn-primary" ng-click="edit(contact._id)">Edit</button></td>
+                <td><button class="btn btn-danger" ng-click="removeConact(contact._id)">Remove</button></td>
+        </table>
+    </div>
+
+</body>
+</html>
