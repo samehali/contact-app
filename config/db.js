@@ -1,5 +1,6 @@
 module.exports = {
 
 	// the database url to connect
-    url: 'mongodb://sameh:01287857830@ds027345.mongolab.com:27345/contactapp'
+    url: 'mongodb://ali:147258369a@ds056688.mongolab.com:56688/contact'
+
 }
